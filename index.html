@@ -10,13 +10,19 @@
     <link rel="stylesheet" href="style.css">
     <!-- Bootstrap + Steller main styles -->
 	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themify-icons.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
     <!-- Page navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/imgs/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="assets/imgs/logo.svg" alt=" logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,8 +45,14 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="- btn btn-primary rounded ml-4" href="components.html">Copmonents</a>
+                        <a class="btn btn-primary rounded ml-4" 
+   href="PORTFOLIO%20ASSETS/Ankababu%20Desingner%20Resume.pdf" 
+   target="_blank">
+    View Resume
+</a>
+
                     </li>
+                    
                 </ul>
             </div>
         </div>          
@@ -49,25 +61,78 @@
 
     <!-- Page Header -->
     <header class="header" id="home">
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between; background-color: #ff7957; padding: 20px; border-radius: 10px;">
+        <div class="container" 
+     style="display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            background-color: #92bcce; 
+            padding: 20px; 
+            border-radius: 10px;
+            width: 100vw;
+            box-sizing: border-box;">
             <div class="infos">
-                <h6 class="subtitle">Hello,I'm</h6>
-                <h6 class="title">UPPALA ANKABABU</h6>
-                <p>Graphic Designer</p>
+                <h6 class="subtitle" style="font-size: 40px;color:#fff">Hello,I'm</h6>
+                <h6 class="title" style="font-size: 70px;color:#fff">UPPALA ANKABABU</h6>
+                <p style="display: inline-block; margin-right: 10px;color:#fff;font-size: 40px;">&#9733;</p>
+                <p style="font-size: 40px; display: inline-block; color: #fff;">
+                    <span id="changingText"><strong>Graphic Designer</strong></span>
+                  </p>
+                  
+                  <script>
+                  const texts = ["Graphic Designer", "YouTube Thumbnail Specialist", "UI/UX Designer", "Multimedia Designer"];
+                  let index = 0;
+                  let charIndex = 0;
+                  let isDeleting = false;
+                  let currentText = "";
+                  
+                  function typeEffect() {
+                      const target = document.getElementById("changingText");
+                      const fullText = texts[index];
+                  
+                      if (isDeleting) {
+                          currentText = fullText.substring(0, charIndex--);
+                      } else {
+                          currentText = fullText.substring(0, charIndex++);
+                      }
+                  
+                      target.innerHTML = `<strong>${currentText}</strong>`; 
+                  
+                      if (!isDeleting && charIndex === fullText.length) {
+                          setTimeout(() => isDeleting = true, 2000); 
+                      } else if (isDeleting && charIndex === 0) {
+                          isDeleting = false;
+                          index = (index + 1) % texts.length; 
+                      }
+                  
+                      setTimeout(typeEffect, isDeleting ? 50 : 100); 
+                  }
+                  
+                  typeEffect(); 
+                  </script>
+                  
 
                 <div class="buttons pt-3">
-                    <button class="btn btn-primary rounded">HIRE ME</button>
-                    <button class="btn btn-dark rounded" id="downloadCV">DOWNLOAD CV</button>
+                    
+                    <a href="https://wa.me/919392815271?text=Hello,%20I'm%20interested%20in%20your%20services!" class="btn btn-primary rounded" target="_blank">
+                        Chat on WhatsApp
+                    </a>
+                    
+                    
+                    <a href="PORTFOLIO ASSETS/Ankababu Desingner Resume.pdf" download="Ankababu_Resume.pdf">
+                        <button class="btn btn-dark rounded">DOWNLOAD CV</button>
+                    </a>
+                    
                 </div>      
 
                 <div class="socials mt-4">
-                    <a class="social-item" href="javascript:void(0)"><i class="ti-facebook"></i></a>
-                    <a class="social-item" href="javascript:void(0)"><i class="ti-google"></i></a>
-                    <a class="social-item" href="javascript:void(0)"><i class="ti-github"></i></a>
-                    <a class="social-item" href="javascript:void(0)"><i class="ti-twitter"></i></a>
+                    <a class="social-item" href="https://www.instagram.com/ab_designing_4u?igsh=M2RpNzU3ODFvc3Vo"><i class="ti-instagram"></i></a>
+                    <a class="social-item" href="https://www.linkedin.com/in/ankababu-uppala-2607652a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="ti-linkedin"></i></a>
+                    <a class="social-item" href="https://www.facebook.com/share/14qxkRBrwp/"><i class="ti-facebook"></i></a>
+                    <a class="social-item" href="https://drive.google.com/drive/folders/1xt6Dc0dzQeE4QEqA96LsWMsxXm2uUxCW"><i class="ti-harddrives"></i></a>
+                    
                 </div>
             </div>              
-            <div class="img-holder" style="flex-shrink:10;">
+            <div class="img-holder" style="flex-shrink:0;">
                 <img src="PORTFOLIO%20ASSETS/1714323545476.jpg" alt="Profile Picture" style="width:200px;height:auto; border-radius:10px;">
             </div>      
         </div>  
@@ -96,9 +161,8 @@
                 <div class="pl-md-4 col-md-9">
                     <h6 class="title">Uppala Ankababu</h6>
                     <p class="subtitle">Graphic Designer</p>
-                    <p>Hello! I'm Ankababu, a passionate graphic designer specializing in eye-catching thumbnails, branding, and digital visuals. I help content creators, businesses, and brands stand out with scroll-stopping designs that grab attention instantly.</p>
-                    <p>With 3 Years of experience in Photoshop, Illustrator, and Premiere Pro, I’ve worked with YouTubers, businesses, and influencers, crafting high-quality visuals that enhance engagement and audience retention..</p>
-                    <button class="btn btn-primary rounded mt-3">DOWNLOAD CV</button>                   
+                    <p>Hello! I'm Ankababu, a creative and detail-oriented Graphic Designer with a passion for crafting eye-catching thumbnails, branding assets, and digital visuals that captivate audiences. With 3+ years of experience in Photoshop, Illustrator, and Premiere Pro, I specialize in visual storytelling, helping content creators, businesses, and brands enhance their engagement and brand identity.</p>
+                    <p>I’ve collaborated with YouTubers, influencers, and businesses to create high-impact thumbnails, social media graphics, and branding materials that not only grab attention but also improve audience retention. My expertise lies in blending artistic creativity with strategic design, ensuring that every project I work on delivers maximum visual impact.</p>                  
                 </div>
             </div>
         </div>
@@ -107,15 +171,15 @@
     <!-- Service section -->
     <section id="service" class="section">
         <div class="container text-center">
-            <h6 class="subtitle">Service</h6>
+            <h6 class="subtitle" style="color:#ff7957">Service</h6>
             <h6 class="section-title mb-4">What I Do</h6>
-            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In alias dignissimos. <br> rerum commodi corrupti, temporibus non quam.</p>
+            <p class="mb-5 pb-4">I create custom YouTube thumbnails that boost clicks and engagement, along with creative social media graphics that make your content <br>stand out. My expertise in branding & logo design helps businesses establish a strong identity, while eye-catching posters & banners ensure maximum visual impact for promotions and events.</p>
 
             <div class="row">
                 <div class="col-sm-6 col-md-3 mb-4">
                     <div class="custom-card card border">
                         <div class="card-body">
-                            <i class="icon ti-crown"></i>
+                            <i class="icon ti-youtube"></i>
                             <h5>Custom YouTube Thumbnails</h5>
                         </div>
                     </div>
@@ -123,7 +187,7 @@
                 <div class="col-sm-6 col-md-3 mb-4">
                     <div class="custom-card card border">
                         <div class="card-body">
-                            <i class="icon ti-desktop"></i>
+                            <i class="icon ti-gallery"></i>
                             <h5>Creative Social Media Graphics</h5>
                         </div>
                     </div>
@@ -131,7 +195,7 @@
                 <div class="col-sm-6 col-md-3 mb-4">
                     <div class="custom-card card border">
                         <div class="card-body">
-                            <i class="icon ti-mobile"></i>
+                            <i class="icon ti-palette"></i>
                             <h5>Branding & Logo Design</h5>
                         </div>
                     </div>
@@ -152,33 +216,33 @@
     <!-- Skills section -->
     <section class="section">
         <div class="container text-center">
-            <h6 class="subtitle">Skills</h6>
+            <h6 class="subtitle"style="color:#ff7957">Skills</h6>
             <h6 class="section-title mb-4">Why Choose me</h6>
-            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In alias dignissimos. <br> rerum commodi corrupti, temporibus non quam.</p>
+            <p class="mb-5 pb-4">I bring 3+ years of experience in crafting high-quality visuals that captivate and engage. My designs are tailored to your brand, ensuring uniqueness and professionalism. With a keen eye for detail and expertise in Photoshop, Illustrator, and Premiere Pro, I deliver fast, reliable, and creative solutions that help you stand out. Plus, I prioritize client satisfaction, offering unlimited revisions until you’re 100% happy! </p>
 
             <div class="row text-left">
                 <div class="col-sm-6">
                     <h6 class="mb-3">Photoshop</h6>
                     <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>89%</span></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 96%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>89%</span></div>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <h6 class="mb-3">Web Design</h6>
+                    <h6 class="mb-3">Illustrator</h6>
                     <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 83%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>83%</span></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>83%</span></div>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <h6 class="mb-3">App Design</h6>
+                    <h6 class="mb-3">PremierePro</h6>
                     <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>95%</span></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>95%</span></div>
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <h6 class="mb-3">SEO</h6>
+                    <h6 class="mb-3">Figma</h6>
                     <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>90%</span></div>
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 70%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>90%</span></div>
                     </div>
                 </div>
             </div>  
@@ -189,78 +253,53 @@
     <!-- Portfolio section -->
     <section id="portfolio" class="section">
         <div class="container text-center">
-            <h6 class="subtitle">Portfolio</h6>
+            <h6 class="subtitle" style="color:#ff7957">Portfolio</h6>
             <h6 class="section-title mb-4">Check My Wonderful Works</h6>
-            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In alias dignissimos. <br> rerum commodi corrupti, temporibus non quam.</p>
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/folio-1.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/folio-2.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
+            <p class="mb-5 pb-4">
+                Explore my creative portfolio featuring Custom YouTube Thumbnails, designed to boost engagement and attract viewers. Discover Creative Social Media Graphics and Branding & Logo Designs that elevate brand identity with visually stunning aesthetics. Check out Eye-Catching Posters & Banners, crafted to leave a lasting impression for businesses and events. <a href="https://drive.google.com/drive/folders/1xt6Dc0dzQeE4QEqA96LsWMsxXm2uUxCW">My Works</a></p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/NJ7.jpg" alt="Image 1"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/GKB7.jpg" alt="Image 2"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/Assignment-53.jpg" alt="Image 3"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/bull7.jpg" alt="Image 4"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/MCV5.jpg" alt="Image 5"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/NJ2.jpg" alt="Image 1"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/ily2.jpg" alt="Image 2"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/dcharanvlogs2.jpg" alt="Image 3"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/gkb4.jpg" alt="Image 4"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/bull8.jpg" alt="Image 5"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/yt thumb1.jpg" alt="Image 1"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/NJ6.jpg" alt="Image 2"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/MCV1.jpg" alt="Image 3"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/leelabhanu1.jpg" alt="Image 4"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/gkb6.jpg" alt="Image 5"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/NJ4.jpg" alt="Image 1"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/yt yhumb2.jpg" alt="Image 2"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/dcharanvlogs1.jpg" alt="Image 3"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/gkb5.jpg" alt="Image 4"></div>
+                    <div class="swiper-slide"><img src="PORTFOLIO%20ASSETS/Images/MCV3(1).jpg" alt="Image 5"></div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/folio-3.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/folio-4.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
-                </div>
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/folio-5.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/folio-6.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Project Title</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="javascript:void(0)"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
-                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    slidesPerView: 3, /* Show 3 images at a time */
+                    centeredSlides: true,
+                    loop: true,
+                    spaceBetween: 75, /* Adjust spacing */
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev"
+                    }
+                });
+            </script>
+            
 
         </div>
     </section>
@@ -274,10 +313,12 @@
                     <div class="row align-items-center">
                         <div class="col-sm-9 text-center text-sm-left">
                             <h5 class="mt-3">Hire Me For Your Project</h5>
-                            <p class="mb-3">Accusantium labore nostrum similique quisquam.</p>
+                            <p class="mb-3">Let’s collaborate to bring your vision to life with stunning designs that make an impact!</p>
                         </div>
                         <div class="col-sm-3 text-center text-sm-right">
-                            <button class="btn btn-light rounded">Hire Me!</button>
+                            <a href="mailto:ankababu.28.10@gmail.com?subject=Job Inquiry&body=Hello, I am interested in hiring you!" class="btn btn-light rounded">
+                                HIRE ME
+                            </a>
                         </div>
                     </div>
                 </div> 
@@ -289,55 +330,67 @@
     <!-- Contact Section -->
     <section id="contact" class="position-relative section">
         <div class="container text-center">
-            <h6 class="subtitle">Contact</h6>
+            <h6 class="subtitle" style="color:#ff7957">Contact</h6>
             <h6 class="section-title mb-4">Get In Touch With Me</h6>
-            <p class="mb-5 pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In alias dignissimos. <br> rerum commodi corrupti, temporibus non quam.</p>
+            <p class="mb-5 pb-4">Have a project in mind or need stunning designs for your brand? Let’s collaborate! Whether it's a YouTube thumbnail, social media graphic, or a complete branding solution, I’m here to bring your vision to life. Feel free to reach out, and let’s create something amazing together! 🚀<br> rerum commodi corrupti, temporibus non quam.</p>
 
             <div class="contact text-left">
                 <div class="form">
                     <h6 class="subtitle">Available 24/7</h6>
                     <h6 class="section-title mb-4">Get In Touch</h6>
-                    <form>
+                    <form action="https://formspree.io/f/xbldznzr" method="POST">
                         <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                            <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                            <input type="text" class="form-control" name="subject" placeholder="Subject (optional)">
                         </div>
                         <div class="form-group">
-                            <textarea name="contact-message" id="" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="message" cols="30" rows="5" class="form-control" placeholder="Your message" required></textarea>
                         </div>
+                        <input type="hidden" name="_next" value="thank-you.html">
+                        <input type="text" name="_gotcha" style="display:none">
                         <button type="submit" class="btn btn-primary btn-block rounded w-lg">Send Message</button>
                     </form>
+                    
                 </div>
                 <div class="contact-infos">
                     <div class="item">
                         <i class="ti-location-pin"></i>
-                        <div class="">
+                        <div>
                             <h5>Location</h5>
-                            <p> 12345 Fake ST NoWhere AB Country</p>
+                            <p>Tirupati, Andhra Pradesh</p>
                         </div>                          
                     </div>
                     <div class="item">
                         <i class="ti-mobile"></i>
                         <div>
                             <h5>Phone Number</h5>
-                            <p>(123) 456-7890</p>
+                            <p><a href="tel:+919392815271">+91 9392815271</a></p>
                         </div>                          
                     </div>
                     <div class="item">
                         <i class="ti-email"></i>
                         <div class="mb-0">
                             <h5>Email Address</h5>
-                            <p>info@website.com</p>
+                            <p><a href="mailto:ankababu.20.10@gmail.com">ankababu.20.10@gmail.com</a></p>
                         </div>
                     </div>
-                </div>                  
+                </div>
+                                 
             </div>
         </div>  
         <div id="map">
-            <iframe src="https://snazzymaps.com/embed/61257"></iframe>
-        </div>      
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.4327444156615!2d79.3441007!3d13.6276389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d4b0f88620427%3A0xcf4152d1daca0cac!2sTirupati%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1707970806505!5m2!1sen!2sin" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+              
     </section>
     <!-- End of Contact Section -->
 
@@ -346,19 +399,27 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-sm-6">
-                    <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="http://www.devcrud.com" target="_blank">DevCRUD</a></p>
+                    <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; 
+                        <a href="" style="color: black; text-decoration: none;" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">
+                            AB Designing 4U
+                        </a>
+                        
+                    </p>
                 </div>
                 <div class="col-sm-6">
                     <div class="socials">
-                        <a class="social-item" href="javascript:void(0)"><i class="ti-facebook"></i></a>
-                        <a class="social-item" href="javascript:void(0)"><i class="ti-google"></i></a>
-                        <a class="social-item" href="javascript:void(0)"><i class="ti-github"></i></a>
-                        <a class="social-item" href="javascript:void(0)"><i class="ti-twitter"></i></a>
+                        <a class="social-item" href="https://www.instagram.com/ab_designing_4u?igsh=M2RpNzU3ODFvc3Vo"><i class="ti-instagram"></i></a>
+                        <a class="social-item" href="https://www.linkedin.com/in/ankababu-uppala-2607652a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="ti-linkedin"></i></a>
+                        <a class="social-item" href="https://www.facebook.com/share/14qxkRBrwp/"><i class="ti-facebook"></i></a>
+                        <a class="social-item" href="https://drive.google.com/drive/folders/1xt6Dc0dzQeE4QEqA96LsWMsxXm2uUxCW"><i class="ti-harddrives"></i></a>
+                        
+                        
                     </div>
                 </div>
             </div>
         </div>
-    </footer> 
+    </footer>
+    
     <!-- End of page footer -->
 	
 	<!-- core  -->

@@ -13,6 +13,7 @@
 */
 
 // smooth scroll
+
 $(document).ready(function(){
 	$(".nav-link").on('click', function(event) {
 
@@ -28,10 +29,5 @@ $(document).ready(function(){
 				window.location.hash = hash;
 			});
       	} 
-    });
-});
-$(document).ready(function(){
-    $("#downloadCV").on("click", function(){
-        window.location.href = "PORTFOLIO ASSETS/Ankababu Designer Resume.pdf"; // Replace with your actual PDF path
     });
 });
